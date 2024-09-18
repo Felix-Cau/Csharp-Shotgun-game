@@ -12,6 +12,10 @@
             {
                 ActionState = ChoiceRandomizer.GetRandomActionChoise();
             }
+            else if (AmmoCount == 0)
+            {
+                ActionState = ChoiceRandomizer.GetRandomActionChoise(ActionOptions.Load, ActionOptions.Block);
+            }
             else if (AmmoCount >= 3)
             {
                 ActionState = ActionOptions.Shotgun;
