@@ -1,11 +1,11 @@
 ﻿namespace Examinationsuppgift2.EntityClasses
 {
-    public class UserClass : EntityClass
+    public class Player : EntityClass
     {
         public int AmountOfWins { get; set; } = 0;
         public int AmountOfLosses { get; set; } = 0;
 
-        public void SetActionState(UserAction action)
+        public void SetActionState(ActionOptions action)
         {
             ActionState = action;
         }

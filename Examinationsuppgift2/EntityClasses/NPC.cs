@@ -1,22 +1,20 @@
-﻿using Examinationsuppgift2.HelperClasses;
-
-namespace Examinationsuppgift2.EntityClasses
+﻿namespace Examinationsuppgift2.EntityClasses
 {
-    public class NPCClass : EntityClass
+    public class NPC : EntityClass
     {
-        public void SetActionState(EntityClass entity)
+        public void SetActionState(Player player)
         {
-            if (entity.AmmoCount == 0)
+            if (player.AmmoCount == 0)
             {
-                ActionState = UserAction.Load;
+                ActionState = ActionOptions.Load;
             }
-            else if (entity.AmmoCount >= 0)
+            else if (player.AmmoCount >= 0)
             {
-                ActionState = ActionEnum.GetRandomActionChoise();
+                ActionState = ChoiceRandomizer.GetRandomActionChoise();
             }
             else if (AmmoCount >= 3)
             {
-                ActionState = UserAction.Shotgun;
+                ActionState = ActionOptions.Shotgun;
             }
         }
     }

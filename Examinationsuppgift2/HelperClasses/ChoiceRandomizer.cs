@@ -1,12 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Examinationsuppgift2.HelperClasses
+﻿namespace Examinationsuppgift2.HelperClasses
 {
-    internal class ChoiceRandomizer
+    public class ChoiceRandomizer
     {
+        private static Random random = new Random();
+
+        public static ActionOptions GetRandomActionChoise()
+        {
+            ActionOptions[] actionOptions = (ActionOptions[])Enum.GetValues(typeof(ActionOptions));
+            return actionOptions[random.Next(actionOptions.Length)];
+        }
+        public static T GetRandomActionChoise<T>(params T[] actionOptions) where T : Enum
+        {
+            return actionOptions[random.Next(actionOptions.Length)];
+        }
     }
 }
