@@ -4,9 +4,9 @@
     {
         private static Random random = new Random();
 
-        public static ActionOptions GetRandomActionChoise()
+        public static ActionOptionsEnum GetRandomActionChoise()
         {
-            ActionOptions[] actionOptions = (ActionOptions[])Enum.GetValues(typeof(ActionOptions));
+            ActionOptionsEnum[] actionOptions = (ActionOptionsEnum[])Enum.GetValues(typeof(ActionOptionsEnum));
             return actionOptions[random.Next(actionOptions.Length)];
         }
         public static T GetRandomActionChoise<T>(params T[] actionOptions) where T : Enum

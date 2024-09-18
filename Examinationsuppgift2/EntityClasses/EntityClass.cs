@@ -3,6 +3,6 @@
     public abstract class EntityClass
     {
         public int AmmoCount { get; set; } = 0;
-        public ActionOptions ActionState { get; set; }
+        public ActionOptionsEnum ActionState { get; protected set; }
     }
 }

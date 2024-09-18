@@ -5,7 +5,7 @@
         public int AmountOfWins { get; set; } = 0;
         public int AmountOfLosses { get; set; } = 0;
 
-        public void SetActionState(ActionOptions action)
+        public void SetActionState(ActionOptionsEnum action)
         {
             ActionState = action;
         }
