@@ -105,6 +105,7 @@ namespace Examinationsuppgift2.HelperClasses
                     {
                         _localPlayer.AmountOfWins++;
                         _localPlayer.AmmoCount -= 3;
+                        _localNpc.AmmoCount--;
                         return (_localPlayer, _localNpc);
                     }
                     else
