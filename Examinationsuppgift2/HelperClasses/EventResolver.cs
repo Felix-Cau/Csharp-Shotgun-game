@@ -23,37 +23,44 @@ namespace Examinationsuppgift2.HelperClasses
                     {
                         _localPlayer.AmmoCount++;
                         _localNpc.AmmoCount++;
+                        MessageBox.Show(StaticMessages.TieMessage);
                         return (_localPlayer, _localNpc);
                     }
                     else if (npcAction == ActionOptionsEnum.Block)
                     {
                         _localPlayer.AmmoCount++;
+                        MessageBox.Show(StaticMessages.TieMessage);
                         return (_localPlayer, _localNpc);
                     }
                     else if (npcAction == ActionOptionsEnum.Shoot)
                     {
                         _localPlayer.AmountOfLosses++;
                         _localNpc.AmmoCount--;
+                        MessageBox.Show(StaticMessages.LoseMessage);
                         return (_localPlayer, _localNpc);
                     }
                     else
                     {
                         _localPlayer.AmountOfLosses++;
                         _localNpc.AmmoCount -= 3;
+                        MessageBox.Show(StaticMessages.LoseMessage);
                         return (_localPlayer, _localNpc);
                     }
                 case ActionOptionsEnum.Block:
                     if (npcAction == ActionOptionsEnum.Load)
                     {
                         _localNpc.AmmoCount++;
+                        MessageBox.Show(StaticMessages.TieMessage);
                         return (_localPlayer, _localNpc);
                     }
                     else if (npcAction == ActionOptionsEnum.Block)
                     {
+                        MessageBox.Show(StaticMessages.TieMessage);
                         return (_localPlayer, _localNpc);
                     }
                     else if (npcAction == ActionOptionsEnum.Shoot)
                     {
+                        MessageBox.Show(StaticMessages.TieMessage);
                         _localNpc.AmmoCount--;
                         return (_localPlayer, _localNpc);
                     }
@@ -61,6 +68,7 @@ namespace Examinationsuppgift2.HelperClasses
                     {
                         _localPlayer.AmountOfLosses++;
                         _localNpc.AmmoCount -= 3;
+                        MessageBox.Show(StaticMessages.LoseMessage);
                         return (_localPlayer, _localNpc);
                     }
                 case ActionOptionsEnum.Shoot:
@@ -68,17 +76,20 @@ namespace Examinationsuppgift2.HelperClasses
                     {
                         _localPlayer.AmountOfWins++;
                         _localPlayer.AmmoCount--;
+                        MessageBox.Show(StaticMessages.WinMessage);
                         return (_localPlayer, _localNpc);
                     }
                     else if (npcAction == ActionOptionsEnum.Block)
                     {
                         _localPlayer.AmmoCount--;
+                        MessageBox.Show(StaticMessages.TieMessage);
                         return (_localPlayer, _localNpc);
                     }
                     else if (npcAction == ActionOptionsEnum.Shoot)
                     {
                         _localPlayer.AmmoCount--;
                         _localNpc.AmmoCount--;
+                        MessageBox.Show(StaticMessages.TieMessage);
                         return (_localPlayer, _localNpc);
                     }
                     else
@@ -86,6 +97,7 @@ namespace Examinationsuppgift2.HelperClasses
                         _localPlayer.AmmoCount--;
                         _localPlayer.AmountOfLosses++;
                         _localNpc.AmmoCount -= 3;
+                        MessageBox.Show(StaticMessages.LoseMessage);
                         return (_localPlayer, _localNpc);
                     }
                 case ActionOptionsEnum.Shotgun:
@@ -93,12 +105,14 @@ namespace Examinationsuppgift2.HelperClasses
                     {
                         _localPlayer.AmountOfWins++;
                         _localPlayer.AmmoCount -= 3;
+                        MessageBox.Show(StaticMessages.WinMessage);
                         return (_localPlayer, _localNpc);
                     }
                     else if (npcAction == ActionOptionsEnum.Block)
                     {
                         _localPlayer.AmountOfWins++;
                         _localPlayer.AmmoCount -= 3;
+                        MessageBox.Show(StaticMessages.WinMessage);
                         return (_localPlayer, _localNpc);
                     }
                     else if (npcAction == ActionOptionsEnum.Shoot)
@@ -106,12 +120,14 @@ namespace Examinationsuppgift2.HelperClasses
                         _localPlayer.AmountOfWins++;
                         _localPlayer.AmmoCount -= 3;
                         _localNpc.AmmoCount--;
+                        MessageBox.Show(StaticMessages.WinMessage);
                         return (_localPlayer, _localNpc);
                     }
                     else
                     {
                         _localPlayer.AmmoCount -= 3;
                         _localNpc.AmmoCount -= 3;
+                        MessageBox.Show(StaticMessages.TieMessage);
                         return (_localPlayer, _localNpc);
                     }
                 default:
