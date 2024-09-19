@@ -4,6 +4,7 @@
     {
         public int AmountOfWins { get; set; } = 0;
         public int AmountOfLosses { get; set; } = 0;
+        public string EventMessage { get; set; }
 
         public void SetActionState(ActionOptionsEnum action)
         {
