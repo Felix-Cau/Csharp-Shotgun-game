@@ -36,14 +36,16 @@ namespace Examinationsuppgift2.HelperClasses
                     {
                         _localPlayer.AmountOfLosses++;
                         _localPlayer.EventMessage = StaticMessages.LoseMessage;
-                        _localNpc.AmmoCount--;
+                        _localPlayer.AmmoCount = 0;
+                        _localNpc.AmmoCount = 0;
                         return (_localPlayer, _localNpc);
                     }
                     else
                     {
                         _localPlayer.AmountOfLosses++;
                         _localPlayer.EventMessage = StaticMessages.LoseMessage;
-                        _localNpc.AmmoCount -= 3;
+                        _localPlayer.AmmoCount = 0;
+                        _localNpc.AmmoCount = 0;
                         return (_localPlayer, _localNpc);
                     }
                 case ActionOptionsEnum.Block:
@@ -68,15 +70,17 @@ namespace Examinationsuppgift2.HelperClasses
                     {
                         _localPlayer.AmountOfLosses++;
                         _localPlayer.EventMessage = StaticMessages.LoseMessage;
-                        _localNpc.AmmoCount -= 3;
+                        _localPlayer.AmmoCount = 0;
+                        _localNpc.AmmoCount = 0;
                         return (_localPlayer, _localNpc);
                     }
                 case ActionOptionsEnum.Shoot:
                     if (npcAction == ActionOptionsEnum.Load)
                     {
                         _localPlayer.AmountOfWins++;
-                        _localPlayer.AmmoCount--;
+                        _localPlayer.AmmoCount = 0;
                         _localPlayer.EventMessage = StaticMessages.WinMessage;
+                        _localNpc.AmmoCount = 0;
                         return (_localPlayer, _localNpc);
                     }
                     else if (npcAction == ActionOptionsEnum.Block)
@@ -94,33 +98,35 @@ namespace Examinationsuppgift2.HelperClasses
                     }
                     else
                     {
-                        _localPlayer.AmmoCount--;
                         _localPlayer.AmountOfLosses++;
                         _localPlayer.EventMessage = StaticMessages.LoseMessage;
-                        _localNpc.AmmoCount -= 3;
+                        _localPlayer.AmmoCount = 0;
+                        _localNpc.AmmoCount = 0;
                         return (_localPlayer, _localNpc);
                     }
                 case ActionOptionsEnum.Shotgun:
                     if (npcAction == ActionOptionsEnum.Load)
                     {
                         _localPlayer.AmountOfWins++;
-                        _localPlayer.AmmoCount -= 3;
+                        _localPlayer.AmmoCount = 0;
+                        _localNpc.AmmoCount = 0;
                         _localPlayer.EventMessage = StaticMessages.WinMessage;
                         return (_localPlayer, _localNpc);
                     }
                     else if (npcAction == ActionOptionsEnum.Block)
                     {
                         _localPlayer.AmountOfWins++;
-                        _localPlayer.AmmoCount -= 3;
+                        _localPlayer.AmmoCount = 0;
+                        _localNpc.AmmoCount = 0;
                         _localPlayer.EventMessage = StaticMessages.WinMessage;
                         return (_localPlayer, _localNpc);
                     }
                     else if (npcAction == ActionOptionsEnum.Shoot)
                     {
                         _localPlayer.AmountOfWins++;
-                        _localPlayer.AmmoCount -= 3;
+                        _localPlayer.AmmoCount = 0;
+                        _localNpc.AmmoCount = 0;
                         _localPlayer.EventMessage = StaticMessages.WinMessage;
-                        _localNpc.AmmoCount--;
                         return (_localPlayer, _localNpc);
                     }
                     else

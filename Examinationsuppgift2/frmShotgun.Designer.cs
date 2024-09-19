@@ -29,11 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmShotgun));
-            lblPlayerInformation = new Label();
             lblAmmoCount = new Label();
             lblPlayerWins = new Label();
             lblLosses = new Label();
-            lblOpponentInformation = new Label();
             lblOpponentAmmoCount = new Label();
             lblInfoText = new Label();
             buttonLoad = new Button();
@@ -44,19 +42,10 @@
             lblDisplayUserLosses = new Label();
             lblDisplayAmmoCount = new Label();
             lblDisplayNpcAmmoCount = new Label();
+            lblOpponentInformation = new Label();
+            lblPlayerInformation = new Label();
+            buttonQuit = new Button();
             SuspendLayout();
-            // 
-            // lblPlayerInformation
-            // 
-            lblPlayerInformation.AutoSize = true;
-            lblPlayerInformation.BackColor = SystemColors.Desktop;
-            lblPlayerInformation.BorderStyle = BorderStyle.Fixed3D;
-            lblPlayerInformation.Font = new Font("Segoe UI", 18F);
-            lblPlayerInformation.Location = new Point(12, 9);
-            lblPlayerInformation.Name = "lblPlayerInformation";
-            lblPlayerInformation.Size = new Size(212, 34);
-            lblPlayerInformation.TabIndex = 0;
-            lblPlayerInformation.Text = "Player information";
             // 
             // lblAmmoCount
             // 
@@ -94,18 +83,6 @@
             lblLosses.TabIndex = 3;
             lblLosses.Text = "Losses";
             // 
-            // lblOpponentInformation
-            // 
-            lblOpponentInformation.AutoSize = true;
-            lblOpponentInformation.BackColor = SystemColors.Desktop;
-            lblOpponentInformation.BorderStyle = BorderStyle.Fixed3D;
-            lblOpponentInformation.Font = new Font("Segoe UI", 18F);
-            lblOpponentInformation.Location = new Point(739, 9);
-            lblOpponentInformation.Name = "lblOpponentInformation";
-            lblOpponentInformation.Size = new Size(257, 34);
-            lblOpponentInformation.TabIndex = 4;
-            lblOpponentInformation.Text = "Opponent information";
-            // 
             // lblOpponentAmmoCount
             // 
             lblOpponentAmmoCount.AutoSize = true;
@@ -125,7 +102,7 @@
             lblInfoText.BorderStyle = BorderStyle.Fixed3D;
             lblInfoText.Font = new Font("Segoe UI", 18F);
             lblInfoText.ForeColor = SystemColors.ControlText;
-            lblInfoText.Location = new Point(379, 713);
+            lblInfoText.Location = new Point(371, 672);
             lblInfoText.Name = "lblInfoText";
             lblInfoText.Size = new Size(283, 34);
             lblInfoText.TabIndex = 10;
@@ -135,7 +112,7 @@
             // 
             buttonLoad.BackgroundImage = (Image)resources.GetObject("buttonLoad.BackgroundImage");
             buttonLoad.BackgroundImageLayout = ImageLayout.Stretch;
-            buttonLoad.Location = new Point(102, 768);
+            buttonLoad.Location = new Point(107, 717);
             buttonLoad.Name = "buttonLoad";
             buttonLoad.Size = new Size(187, 172);
             buttonLoad.TabIndex = 11;
@@ -146,7 +123,7 @@
             // 
             buttonBlock.BackgroundImage = (Image)resources.GetObject("buttonBlock.BackgroundImage");
             buttonBlock.BackgroundImageLayout = ImageLayout.Stretch;
-            buttonBlock.Location = new Point(311, 768);
+            buttonBlock.Location = new Point(312, 717);
             buttonBlock.Name = "buttonBlock";
             buttonBlock.Size = new Size(187, 172);
             buttonBlock.TabIndex = 12;
@@ -157,7 +134,7 @@
             // 
             buttonShoot.BackgroundImage = (Image)resources.GetObject("buttonShoot.BackgroundImage");
             buttonShoot.BackgroundImageLayout = ImageLayout.Stretch;
-            buttonShoot.Location = new Point(529, 768);
+            buttonShoot.Location = new Point(528, 717);
             buttonShoot.Name = "buttonShoot";
             buttonShoot.Size = new Size(187, 172);
             buttonShoot.TabIndex = 13;
@@ -168,7 +145,7 @@
             // 
             buttonShotgun.BackgroundImage = (Image)resources.GetObject("buttonShotgun.BackgroundImage");
             buttonShotgun.BackgroundImageLayout = ImageLayout.Stretch;
-            buttonShotgun.Location = new Point(739, 768);
+            buttonShotgun.Location = new Point(739, 717);
             buttonShotgun.Name = "buttonShotgun";
             buttonShotgun.Size = new Size(187, 172);
             buttonShotgun.TabIndex = 14;
@@ -219,11 +196,47 @@
             lblDisplayNpcAmmoCount.TabIndex = 18;
             lblDisplayNpcAmmoCount.Text = "label1";
             // 
+            // lblOpponentInformation
+            // 
+            lblOpponentInformation.AutoSize = true;
+            lblOpponentInformation.BackColor = SystemColors.Desktop;
+            lblOpponentInformation.BorderStyle = BorderStyle.Fixed3D;
+            lblOpponentInformation.Font = new Font("Segoe UI", 18F);
+            lblOpponentInformation.Location = new Point(739, 9);
+            lblOpponentInformation.Name = "lblOpponentInformation";
+            lblOpponentInformation.Size = new Size(257, 34);
+            lblOpponentInformation.TabIndex = 4;
+            lblOpponentInformation.Text = "Opponent information";
+            // 
+            // lblPlayerInformation
+            // 
+            lblPlayerInformation.AutoSize = true;
+            lblPlayerInformation.BackColor = SystemColors.Desktop;
+            lblPlayerInformation.BorderStyle = BorderStyle.Fixed3D;
+            lblPlayerInformation.Font = new Font("Segoe UI", 18F);
+            lblPlayerInformation.Location = new Point(12, 9);
+            lblPlayerInformation.Name = "lblPlayerInformation";
+            lblPlayerInformation.Size = new Size(212, 34);
+            lblPlayerInformation.TabIndex = 0;
+            lblPlayerInformation.Text = "Player information";
+            // 
+            // buttonQuit
+            // 
+            buttonQuit.BackgroundImage = (Image)resources.GetObject("buttonQuit.BackgroundImage");
+            buttonQuit.BackgroundImageLayout = ImageLayout.Stretch;
+            buttonQuit.Location = new Point(914, 896);
+            buttonQuit.Name = "buttonQuit";
+            buttonQuit.Size = new Size(84, 81);
+            buttonQuit.TabIndex = 19;
+            buttonQuit.UseVisualStyleBackColor = true;
+            buttonQuit.Click += buttonQuit_Click;
+            // 
             // frmShotgun
             // 
             AutoScaleMode = AutoScaleMode.None;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1008, 985);
+            Controls.Add(buttonQuit);
             Controls.Add(lblDisplayNpcAmmoCount);
             Controls.Add(lblDisplayAmmoCount);
             Controls.Add(lblDisplayUserLosses);
@@ -247,12 +260,9 @@
         }
 
         #endregion
-
-        private Label lblPlayerInformation;
         private Label lblAmmoCount;
         private Label lblPlayerWins;
         private Label lblLosses;
-        private Label lblOpponentInformation;
         private Label lblOpponentAmmoCount;
         private Label lblInfoText;
         private Button buttonLoad;
@@ -263,5 +273,8 @@
         private Label lblDisplayUserLosses;
         private Label lblDisplayAmmoCount;
         private Label lblDisplayNpcAmmoCount;
+        private Label lblOpponentInformation;
+        private Label lblPlayerInformation;
+        private Button buttonQuit;
     }
 }
