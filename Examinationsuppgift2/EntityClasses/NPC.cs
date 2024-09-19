@@ -2,7 +2,7 @@
 {
     public class Npc : EntityClass
     {
-        public void SetActionState(Player player)
+        public Npc SetActionState(Player player, Npc npc)
         {
             if (player.AmmoCount == 0)
             {
@@ -20,6 +20,7 @@
             {
                 ActionState = ActionOptionsEnum.Shotgun;
             }
+            return npc;
         }
     }
 }

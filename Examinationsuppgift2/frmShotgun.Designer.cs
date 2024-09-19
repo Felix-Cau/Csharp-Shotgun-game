@@ -35,15 +35,15 @@
             lblLosses = new Label();
             lblOpponentInformation = new Label();
             lblOpponentAmmoCount = new Label();
-            txtboxPlayerWins = new TextBox();
-            txtBoxPlayerLosses = new TextBox();
-            txtBoxNpcAmmoCount = new TextBox();
-            txtBoxPlayerAmmoCount = new TextBox();
             lblInfoText = new Label();
             buttonLoad = new Button();
             buttonBlock = new Button();
             buttonShoot = new Button();
             buttonShotgun = new Button();
+            lblDisplayUserWins = new Label();
+            lblDisplayUserLosses = new Label();
+            lblDisplayAmmoCount = new Label();
+            lblDisplayNpcAmmoCount = new Label();
             SuspendLayout();
             // 
             // lblPlayerInformation
@@ -118,42 +118,6 @@
             lblOpponentAmmoCount.TabIndex = 5;
             lblOpponentAmmoCount.Text = "Ammo count";
             // 
-            // txtboxPlayerWins
-            // 
-            txtboxPlayerWins.BackColor = SystemColors.Desktop;
-            txtboxPlayerWins.Font = new Font("Segoe UI", 12F);
-            txtboxPlayerWins.Location = new Point(12, 80);
-            txtboxPlayerWins.Name = "txtboxPlayerWins";
-            txtboxPlayerWins.Size = new Size(81, 29);
-            txtboxPlayerWins.TabIndex = 6;
-            // 
-            // txtBoxPlayerLosses
-            // 
-            txtBoxPlayerLosses.BackColor = SystemColors.Desktop;
-            txtBoxPlayerLosses.Font = new Font("Segoe UI", 12F);
-            txtBoxPlayerLosses.Location = new Point(122, 80);
-            txtBoxPlayerLosses.Name = "txtBoxPlayerLosses";
-            txtBoxPlayerLosses.Size = new Size(81, 29);
-            txtBoxPlayerLosses.TabIndex = 7;
-            // 
-            // txtBoxNpcAmmoCount
-            // 
-            txtBoxNpcAmmoCount.BackColor = SystemColors.Desktop;
-            txtBoxNpcAmmoCount.Font = new Font("Segoe UI", 12F);
-            txtBoxNpcAmmoCount.Location = new Point(915, 80);
-            txtBoxNpcAmmoCount.Name = "txtBoxNpcAmmoCount";
-            txtBoxNpcAmmoCount.Size = new Size(81, 29);
-            txtBoxNpcAmmoCount.TabIndex = 8;
-            // 
-            // txtBoxPlayerAmmoCount
-            // 
-            txtBoxPlayerAmmoCount.BackColor = SystemColors.Desktop;
-            txtBoxPlayerAmmoCount.Font = new Font("Segoe UI", 12F);
-            txtBoxPlayerAmmoCount.Location = new Point(12, 144);
-            txtBoxPlayerAmmoCount.Name = "txtBoxPlayerAmmoCount";
-            txtBoxPlayerAmmoCount.Size = new Size(81, 29);
-            txtBoxPlayerAmmoCount.TabIndex = 9;
-            // 
             // lblInfoText
             // 
             lblInfoText.AutoSize = true;
@@ -161,11 +125,11 @@
             lblInfoText.BorderStyle = BorderStyle.Fixed3D;
             lblInfoText.Font = new Font("Segoe UI", 18F);
             lblInfoText.ForeColor = SystemColors.ControlText;
-            lblInfoText.Location = new Point(336, 705);
+            lblInfoText.Location = new Point(379, 713);
             lblInfoText.Name = "lblInfoText";
-            lblInfoText.Size = new Size(355, 34);
+            lblInfoText.Size = new Size(283, 34);
             lblInfoText.TabIndex = 10;
-            lblInfoText.Text = "Choose your next action player!";
+            lblInfoText.Text = "Choose your next action!";
             // 
             // buttonLoad
             // 
@@ -176,6 +140,7 @@
             buttonLoad.Size = new Size(187, 172);
             buttonLoad.TabIndex = 11;
             buttonLoad.UseVisualStyleBackColor = true;
+            buttonLoad.Click += buttonLoad_Click;
             // 
             // buttonBlock
             // 
@@ -186,6 +151,7 @@
             buttonBlock.Size = new Size(187, 172);
             buttonBlock.TabIndex = 12;
             buttonBlock.UseVisualStyleBackColor = true;
+            buttonBlock.Click += buttonBlock_Click;
             // 
             // buttonShoot
             // 
@@ -196,6 +162,7 @@
             buttonShoot.Size = new Size(187, 172);
             buttonShoot.TabIndex = 13;
             buttonShoot.UseVisualStyleBackColor = true;
+            buttonShoot.Click += buttonShoot_Click;
             // 
             // buttonShotgun
             // 
@@ -206,21 +173,66 @@
             buttonShotgun.Size = new Size(187, 172);
             buttonShotgun.TabIndex = 14;
             buttonShotgun.UseVisualStyleBackColor = true;
+            buttonShotgun.Click += buttonShotgun_Click;
+            // 
+            // lblDisplayUserWins
+            // 
+            lblDisplayUserWins.AutoSize = true;
+            lblDisplayUserWins.BorderStyle = BorderStyle.Fixed3D;
+            lblDisplayUserWins.Font = new Font("Segoe UI", 12F);
+            lblDisplayUserWins.Location = new Point(25, 86);
+            lblDisplayUserWins.Name = "lblDisplayUserWins";
+            lblDisplayUserWins.Size = new Size(54, 23);
+            lblDisplayUserWins.TabIndex = 15;
+            lblDisplayUserWins.Text = "label1";
+            // 
+            // lblDisplayUserLosses
+            // 
+            lblDisplayUserLosses.AutoSize = true;
+            lblDisplayUserLosses.BorderStyle = BorderStyle.Fixed3D;
+            lblDisplayUserLosses.Font = new Font("Segoe UI", 12F);
+            lblDisplayUserLosses.Location = new Point(140, 86);
+            lblDisplayUserLosses.Name = "lblDisplayUserLosses";
+            lblDisplayUserLosses.Size = new Size(54, 23);
+            lblDisplayUserLosses.TabIndex = 16;
+            lblDisplayUserLosses.Text = "label1";
+            // 
+            // lblDisplayAmmoCount
+            // 
+            lblDisplayAmmoCount.AutoSize = true;
+            lblDisplayAmmoCount.BorderStyle = BorderStyle.Fixed3D;
+            lblDisplayAmmoCount.Font = new Font("Segoe UI", 12F);
+            lblDisplayAmmoCount.Location = new Point(48, 150);
+            lblDisplayAmmoCount.Name = "lblDisplayAmmoCount";
+            lblDisplayAmmoCount.Size = new Size(54, 23);
+            lblDisplayAmmoCount.TabIndex = 17;
+            lblDisplayAmmoCount.Text = "label1";
+            // 
+            // lblDisplayNpcAmmoCount
+            // 
+            lblDisplayNpcAmmoCount.AutoSize = true;
+            lblDisplayNpcAmmoCount.BorderStyle = BorderStyle.Fixed3D;
+            lblDisplayNpcAmmoCount.Font = new Font("Segoe UI", 12F);
+            lblDisplayNpcAmmoCount.Location = new Point(933, 86);
+            lblDisplayNpcAmmoCount.Name = "lblDisplayNpcAmmoCount";
+            lblDisplayNpcAmmoCount.Size = new Size(54, 23);
+            lblDisplayNpcAmmoCount.TabIndex = 18;
+            lblDisplayNpcAmmoCount.Text = "label1";
             // 
             // frmShotgun
             // 
             AutoScaleMode = AutoScaleMode.None;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1008, 985);
+            Controls.Add(lblDisplayNpcAmmoCount);
+            Controls.Add(lblDisplayAmmoCount);
+            Controls.Add(lblDisplayUserLosses);
+            Controls.Add(lblDisplayUserWins);
             Controls.Add(buttonShotgun);
             Controls.Add(buttonShoot);
             Controls.Add(buttonBlock);
             Controls.Add(buttonLoad);
             Controls.Add(lblInfoText);
-            Controls.Add(txtBoxPlayerAmmoCount);
-            Controls.Add(txtBoxNpcAmmoCount);
-            Controls.Add(txtBoxPlayerLosses);
-            Controls.Add(txtboxPlayerWins);
             Controls.Add(lblOpponentAmmoCount);
             Controls.Add(lblOpponentInformation);
             Controls.Add(lblLosses);
@@ -242,14 +254,14 @@
         private Label lblLosses;
         private Label lblOpponentInformation;
         private Label lblOpponentAmmoCount;
-        private TextBox txtboxPlayerWins;
-        private TextBox txtBoxPlayerLosses;
-        private TextBox txtBoxNpcAmmoCount;
-        private TextBox txtBoxPlayerAmmoCount;
         private Label lblInfoText;
         private Button buttonLoad;
         private Button buttonBlock;
         private Button buttonShoot;
         private Button buttonShotgun;
+        private Label lblDisplayUserWins;
+        private Label lblDisplayUserLosses;
+        private Label lblDisplayAmmoCount;
+        private Label lblDisplayNpcAmmoCount;
     }
 }
