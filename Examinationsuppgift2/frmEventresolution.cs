@@ -20,19 +20,20 @@ namespace Examinationsuppgift2
             // 
             // buttonOk
             // 
-            buttonOk.BackgroundImage = (Image)resources.GetObject("buttonOk.BackgroundImage");
             buttonOk.BackgroundImageLayout = ImageLayout.Stretch;
-            buttonOk.Location = new Point(166, 329);
+            buttonOk.Font = new Font("Segoe UI", 18F);
+            buttonOk.Location = new Point(348, 388);
             buttonOk.Name = "buttonOk";
-            buttonOk.Size = new Size(129, 123);
+            buttonOk.Size = new Size(77, 55);
             buttonOk.TabIndex = 0;
+            buttonOk.Text = "OK!";
             buttonOk.UseVisualStyleBackColor = true;
             buttonOk.Click += buttonOk_Click;
             // 
             // richTextBoxEventMessage
             // 
             richTextBoxEventMessage.Font = new Font("Segoe UI", 12F);
-            richTextBoxEventMessage.Location = new Point(89, 48);
+            richTextBoxEventMessage.Location = new Point(51, 388);
             richTextBoxEventMessage.Name = "richTextBoxEventMessage";
             richTextBoxEventMessage.Size = new Size(291, 55);
             richTextBoxEventMessage.TabIndex = 1;
