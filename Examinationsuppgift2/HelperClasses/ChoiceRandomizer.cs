@@ -1,6 +1,6 @@
 ﻿namespace Examinationsuppgift2.HelperClasses
 {
-    public class ChoiceRandomizer
+    public static class ChoiceRandomizer
     {
         private static Random random = new Random();
 
