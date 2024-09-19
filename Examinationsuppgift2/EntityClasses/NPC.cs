@@ -8,11 +8,11 @@
             {
                 ActionState = ActionOptionsEnum.Load;
             }
-            else if (player.AmmoCount >= 0)
+            else if (player.AmmoCount >= 0 && AmmoCount != 0)
             {
                 ActionState = ChoiceRandomizer.GetRandomActionChoise();
             }
-            else if (AmmoCount == 0 && AmmoCount < 3)
+            else if (AmmoCount == 0)
             {
                 ActionState = ChoiceRandomizer.GetRandomActionChoise(ActionOptionsEnum.Load, ActionOptionsEnum.Block);
             }
